@@ -1,0 +1,4 @@
+repository "DemoARGame/DemoARGame@18968361929158@cloud"
+  path "/"
+    br "/main"
+    co "/main"
