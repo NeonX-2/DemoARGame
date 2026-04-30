@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="RedCard" size="5.000000 7.264472" />
     <ImageTarget name="Siesta" size="5.000000 3.125000" />
     <ImageTarget name="Potion" size="5.000000 7.497256" />
     <ImageTarget name="Joker" size="5.000000 7.743658" />
