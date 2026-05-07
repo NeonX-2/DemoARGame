@@ -205,7 +205,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1668,7 +1668,6 @@ GameObject:
   - component: {fileID: 1244684889}
   - component: {fileID: 1244684888}
   - component: {fileID: 1244684887}
-  - component: {fileID: 1244684890}
   m_Layer: 0
   m_Name: ImageTarget (1)
   m_TagString: Untagged
@@ -1746,7 +1745,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1244684890}
+  mPreview: {fileID: 0}
 --- !u!4 &1244684889
 Transform:
   m_ObjectHideFlags: 0
@@ -1763,25 +1762,6 @@ Transform:
   - {fileID: 621886327}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1244684890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244684886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 1244684888}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: queen
-  mDatasetName: Vuforia/poker-cards-demo.xml
-  mCastedBehaviour: {fileID: 1244684888}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!1 &1319106724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,7 +1985,6 @@ GameObject:
   - component: {fileID: 1555372168}
   - component: {fileID: 1555372167}
   - component: {fileID: 1555372166}
-  - component: {fileID: 1555372169}
   m_Layer: 0
   m_Name: ImageTarget
   m_TagString: Untagged
@@ -2083,7 +2062,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1555372169}
+  mPreview: {fileID: 0}
 --- !u!4 &1555372168
 Transform:
   m_ObjectHideFlags: 0
@@ -2100,25 +2079,6 @@ Transform:
   - {fileID: 2015539149}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1555372169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555372164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 1555372167}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: king
-  mDatasetName: Vuforia/poker-cards-demo.xml
-  mCastedBehaviour: {fileID: 1555372167}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!1 &1606377659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,7 +2504,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
