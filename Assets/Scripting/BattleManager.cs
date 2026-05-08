@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
     public static BattleManager Instance;
@@ -24,5 +24,10 @@ public class BattleManager : MonoBehaviour
         winPanel.SetActive(true);
 
         winnerText.text = winnerName + " WINS!";
+    }
+    
+    public void ReplayBattle()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
