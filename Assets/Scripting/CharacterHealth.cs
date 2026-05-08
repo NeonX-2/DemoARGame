@@ -50,7 +50,14 @@ public class CharacterHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
         }
+        
+        AutoBattle battle = GetComponent<AutoBattle>();
 
+        if (battle != null && battle.enemy != null)
+        {
+            BattleManager.Instance.DeclareWinner(battle.enemy.name);
+        }
+        
         // Disable this object after 3 sec
         Destroy(gameObject, 3f);
     }
