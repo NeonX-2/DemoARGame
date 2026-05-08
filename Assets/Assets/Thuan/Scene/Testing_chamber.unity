@@ -1154,13 +1154,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: R3
+  mTrackableName: king
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/GameAR.xml
-  mAspectRatio: 1.2698412
+  mDataSetPath: Vuforia/poker-cards-demo.xml
+  mAspectRatio: 1.5149834
   mImageTargetType: 0
   mWidth: 5
-  mHeight: 6.349206
+  mHeight: 7.574917
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -1196,8 +1196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
   mObserverBehaviour: {fileID: 1244684888}
   mHiddenRoot: {fileID: 0}
-  mTargetName: R3
-  mDatasetName: Vuforia/GameAR.xml
+  mTargetName: king
+  mDatasetName: Vuforia/poker-cards-demo.xml
   mCastedBehaviour: {fileID: 1244684888}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -1540,13 +1540,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: RedCard
+  mTrackableName: queen
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/GameAR.xml
-  mAspectRatio: 1.4528944
+  mDataSetPath: Vuforia/poker-cards-demo.xml
+  mAspectRatio: 1.5263158
   mImageTargetType: 0
   mWidth: 5
-  mHeight: 7.264472
+  mHeight: 7.631579
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -1582,8 +1582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
   mObserverBehaviour: {fileID: 1555372167}
   mHiddenRoot: {fileID: 0}
-  mTargetName: RedCard
-  mDatasetName: Vuforia/GameAR.xml
+  mTargetName: queen
+  mDatasetName: Vuforia/poker-cards-demo.xml
   mCastedBehaviour: {fileID: 1555372167}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -2044,8 +2044,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoBattle
   enemy: {fileID: 1450681030}
-  minDamage: 8
-  maxDamage: 20
+  minDamage: 2
+  maxDamage: 10
   minAttackTime: 1.5
   maxAttackTime: 3
   criticalChance: 25
