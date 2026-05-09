@@ -23,7 +23,8 @@ public class AutoBattle : MonoBehaviour
     private float nextAttackTime;
 
     private Animator anim;
-
+    private bool battleStarted = false;
+    
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -33,6 +34,8 @@ public class AutoBattle : MonoBehaviour
 
     void Update()
     {
+        if (!battleStarted) return;
+        
         if (enemy == null) return;
 
         if (enemy.IsDead()) return;
@@ -92,5 +95,9 @@ public class AutoBattle : MonoBehaviour
         Debug.Log(gameObject.name + " dealt " + damage + " damage.");
 
         enemy.TakeDamage(damage);
+    }
+    public void StartBattle()
+    {
+        battleStarted = true;
     }
 }
