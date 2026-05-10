@@ -4,10 +4,13 @@ using System.Collections;
 
 public class CharacterHealth : MonoBehaviour
 {
+    public enum CharacterType { Player, Enemy }
+    
     public float maxHealth = 100f;
     public float currentHealth;
 
     public Slider healthBar;
+    public CharacterType characterType = CharacterType.Player;
 
     private bool isDead = false;
 
@@ -36,9 +39,28 @@ public class CharacterHealth : MonoBehaviour
             healthBar.value = currentHealth;
         }
 
+        // Play damage sound
+        PlayDamageSound();
+
         if (currentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    void PlayDamageSound()
+    {
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager != null)
+        {
+            if (characterType == CharacterType.Enemy)
+            {
+                audioManager.PlayPlayerSlash();
+            }
+            else if (characterType == CharacterType.Player)
+            {
+                audioManager.PlayRedGrowl();
+            }
         }
     }
 
