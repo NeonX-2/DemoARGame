@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class CharacterHealth : MonoBehaviour
 
         currentHealth -= damage;
 
+        // Clamp so it never goes below 0
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+
         if (healthBar != null)
         {
             healthBar.value = currentHealth;
@@ -50,16 +54,33 @@ public class CharacterHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
         }
-        
+
+        // Stop attacking
+        AutoBattle battle = GetComponent<AutoBattle>();
+
+        if (battle != null)
+        {
+            battle.enabled = false;
+        }
+
+        // Start delayed win screen
+        StartCoroutine(ShowWinnerAfterDelay());
+    }
+
+    IEnumerator ShowWinnerAfterDelay()
+    {
+        // Wait for death animation
+        yield return new WaitForSeconds(3f);
+
         AutoBattle battle = GetComponent<AutoBattle>();
 
         if (battle != null && battle.enemy != null)
         {
             BattleManager.Instance.DeclareWinner(battle.enemy.name);
         }
-        
-        // Disable this object after 3 sec
-        Destroy(gameObject, 3f);
+
+        // Destroy after animation
+        Destroy(gameObject);
     }
 
     public bool IsDead()

@@ -3,7 +3,8 @@ using UnityEngine;
 public class AutoBattle : MonoBehaviour
 {
     public CharacterHealth enemy;
-
+    public GameObject floatingTextPrefab;
+    public Transform textSpawnPoint;
     [Header("Damage Range")]
     public float minDamage = 5f;
     public float maxDamage = 20f;
@@ -25,10 +26,15 @@ public class AutoBattle : MonoBehaviour
     private Animator anim;
     private bool battleStarted = false;
     
+    
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        if (anim != null)
+        {
+            anim.SetBool("IsFighting", false);
+        }
+        
         SetNextAttackTime();
     }
 
@@ -74,6 +80,10 @@ public class AutoBattle : MonoBehaviour
         if (dodgeRoll <= dodgeChance)
         {
             Debug.Log(enemy.name + " dodged!");
+
+            enemy.GetComponent<AutoBattle>()
+                .ShowFloatingText("DODGE!");
+
             return;
         }
 
@@ -88,16 +98,40 @@ public class AutoBattle : MonoBehaviour
         if (isCritical)
         {
             damage *= criticalMultiplier;
-
+            ShowFloatingText("CRIT!");
             Debug.Log(gameObject.name + " CRITICAL HIT!");
         }
 
         Debug.Log(gameObject.name + " dealt " + damage + " damage.");
-
         enemy.TakeDamage(damage);
+        enemy.GetComponent<AutoBattle>()
+            .ShowFloatingText("-" + Mathf.RoundToInt(damage));
     }
     public void StartBattle()
     {
+        if (anim != null)
+        {
+            anim.SetBool("IsFighting", true);
+        }
         battleStarted = true;
+    }
+    
+    void ShowFloatingText(string message)
+    {
+        if (floatingTextPrefab == null || textSpawnPoint == null)
+            return;
+
+        GameObject textObj = Instantiate(
+            floatingTextPrefab,
+            textSpawnPoint.position,
+            Quaternion.identity
+        );
+
+        FloatingText floatingText = textObj.GetComponent<FloatingText>();
+
+        if (floatingText != null)
+        {
+            floatingText.SetText(message);
+        }
     }
 }
