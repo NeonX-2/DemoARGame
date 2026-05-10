@@ -1792,7 +1792,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1212875378}
   - component: {fileID: 1212875377}
-  - component: {fileID: 1212875376}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1800,103 +1799,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1212875376
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212875375}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1212875377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1911,12 +1813,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 939849590}
   SFXSource: {fileID: 1197326170}
-  background: {fileID: 0}
-  death: {fileID: 0}
-  checkpoint: {fileID: 0}
-  wallTouch: {fileID: 0}
-  portalIn: {fileID: 0}
-  portalOut: {fileID: 0}
+  background: {fileID: 8300000, guid: 1fc256a7f2a423a429168a20246b82ee, type: 3}
+  playerSlash: {fileID: 8300000, guid: ac6d31658bd57a640aa2b86f12206a20, type: 3}
+  redGrowl: {fileID: 8300000, guid: 8673aac18cbbf9040a17661a70a28947, type: 3}
 --- !u!4 &1212875378
 Transform:
   m_ObjectHideFlags: 0
@@ -2012,13 +1911,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: RedCard
+  mTrackableName: king
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/GameAR.xml
-  mAspectRatio: 1.4528944
+  mDataSetPath: Vuforia/poker-cards-demo.xml
+  mAspectRatio: 1.5149834
   mImageTargetType: 0
   mWidth: 5
-  mHeight: 7.264472
+  mHeight: 7.574917
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -2054,8 +1953,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
   mObserverBehaviour: {fileID: 1244684888}
   mHiddenRoot: {fileID: 0}
-  mTargetName: RedCard
-  mDatasetName: Vuforia/GameAR.xml
+  mTargetName: king
+  mDatasetName: Vuforia/poker-cards-demo.xml
   mCastedBehaviour: {fileID: 1244684888}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -2395,9 +2294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0617f10653dd14140a1e8796a513d466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterHealth
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 150
+  currentHealth: 150
   healthBar: {fileID: 128024596}
+  characterType: 0
 --- !u!1 &1555372164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,13 +2376,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: R3
+  mTrackableName: queen
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/GameAR.xml
-  mAspectRatio: 1.2698412
+  mDataSetPath: Vuforia/poker-cards-demo.xml
+  mAspectRatio: 1.5263158
   mImageTargetType: 0
   mWidth: 5
-  mHeight: 6.349206
+  mHeight: 7.631579
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -2518,8 +2418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
   mObserverBehaviour: {fileID: 1555372167}
   mHiddenRoot: {fileID: 0}
-  mTargetName: R3
-  mDatasetName: Vuforia/GameAR.xml
+  mTargetName: queen
+  mDatasetName: Vuforia/poker-cards-demo.xml
   mCastedBehaviour: {fileID: 1555372167}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
@@ -3318,9 +3218,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0617f10653dd14140a1e8796a513d466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterHealth
-  maxHealth: 150
-  currentHealth: 150
+  maxHealth: 100
+  currentHealth: 100
   healthBar: {fileID: 2112878549}
+  characterType: 0
 --- !u!114 &2015539152
 MonoBehaviour:
   m_ObjectHideFlags: 0
